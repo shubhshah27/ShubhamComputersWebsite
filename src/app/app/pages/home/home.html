@@ -1,0 +1,176 @@
+<section id="hero" class="carousel slide home-hero" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button
+      *ngFor="let slide of slides; let i = index"
+      type="button"
+      data-bs-target="#hero"
+      [attr.data-bs-slide-to]="i"
+      [class.active]="i === 0"
+      [attr.aria-current]="i === 0 ? 'true' : null"
+      [attr.aria-label]="'Slide ' + (i + 1)"
+    ></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div *ngFor="let slide of slides; let i = index" class="carousel-item" [class.active]="i === 0">
+      <img [src]="slide.image" class="d-block w-100" [alt]="slide.title" />
+      <div class="carousel-caption">
+        <div class="container">
+          <div class="hero-copy">
+            <p class="eyebrow text-warning">Shubham Computers</p>
+            <h1>{{ slide.title }}</h1>
+            <p class="lead">{{ slide.text }}</p>
+            <div class="hero-actions">
+              <a [routerLink]="[slide.link]" class="btn btn-warning fw-semibold px-4">
+                {{ slide.buttonText }}
+              </a>
+              <a routerLink="/contact" class="btn btn-outline-light fw-semibold px-4">
+                Send Enquiry
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#hero" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#hero" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</section>
+
+<section class="trust-strip">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-md-4" *ngFor="let h of highlights">
+        <div class="trust-item">
+          <strong>{{ h.count }}</strong>
+          <span>{{ h.label }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-preview py-5">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">What We Do</p>
+      <h2 class="section-title">Practical IT support for homes, shops and offices</h2>
+      <p>
+        From new systems and upgrades to Tally, printers, CCTV and antivirus, we help you keep
+        work moving with reliable local service.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-xl-4" *ngFor="let s of services">
+        <article class="service-card h-100">
+          <img [src]="s.image" [alt]="s.title" />
+          <div class="service-card-body">
+            <h3>{{ s.title }}</h3>
+            <p>{{ s.text }}</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof-band py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-5">
+        <p class="eyebrow">Why Customers Call Us</p>
+        <h2 class="section-title">Fast response, genuine products and steady after-sales help</h2>
+        <p class="mb-0">
+          We focus on clear advice, practical repairs and support that continues after installation.
+        </p>
+      </div>
+      <div class="col-lg-7">
+        <div class="row g-3">
+          <div class="col-md-6" *ngFor="let t of testimonials">
+            <blockquote class="testimonial h-100">
+              <p>{{ t.text }}</p>
+              <footer>{{ t.author }}</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-contact py-5">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5">
+        <p class="eyebrow">Get in Touch</p>
+        <h2 class="section-title">Need support or a product quote?</h2>
+        <p class="lead">
+          Share your requirement and we will contact you shortly. For urgent service, calling is
+          still the fastest option.
+        </p>
+        <div class="contact-details">
+          <a [href]="'tel:+91' + contactInfo.phone">{{ contactInfo.phone }}</a>
+          <a [href]="'mailto:' + contactInfo.email">{{ contactInfo.email }}</a>
+          <span>{{ contactInfo.address }}</span>
+          <small>{{ contactInfo.tagline }}</small>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="content-card p-4 p-md-5">
+          <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" ngModel class="form-control" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Phone</label>
+                <input type="tel" name="phone" ngModel class="form-control" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" ngModel class="form-control" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Company / Organization</label>
+                <input type="text" name="company" ngModel class="form-control" />
+              </div>
+              <div class="col-12">
+                <label class="form-label">Service Required</label>
+                <select name="service" ngModel class="form-select" required>
+                  <option value="">Select service</option>
+                  <option *ngFor="let service of serviceOptions" [value]="service">{{ service }}</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Message</label>
+                <textarea name="message" ngModel class="form-control" rows="4" required></textarea>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-warning fw-semibold px-4" type="submit" [disabled]="isSubmitting">
+                  {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div *ngIf="formSubmitted" class="alert alert-success mt-3 mb-0">
+            Thank you. Your enquiry has been sent.
+          </div>
+          <div *ngIf="errorMessage" class="alert alert-danger mt-3 mb-0">
+            {{ errorMessage }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

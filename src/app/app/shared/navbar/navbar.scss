@@ -1,0 +1,77 @@
+.custom-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+
+  /* Semi-transparent gradient background */
+  background: rgba(13, 71, 161, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  transition: background 0.4s ease, box-shadow 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  padding: 0.7rem 1.5rem;
+
+  .navbar-brand {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: #fff;
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-brand:hover {
+    transform: scale(1.05);
+  }
+
+  .nav-link {
+    color: #e3f2fd !important;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #fff !important;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ffeb3b;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .nav-link:hover::after {
+    width: 60%;
+  }
+
+  .active {
+    color: #fff !important;
+    font-weight: 600;
+  }
+
+  .active::after {
+    width: 60%;
+  }
+
+  .navbar-toggler {
+    border: none;
+    outline: none;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+}
+
+/* Optional: subtle shadow when scrolled */
+.navbar.scrolled {
+  background: rgba(13, 71, 161, 0.95);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}

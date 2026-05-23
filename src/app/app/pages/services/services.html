@@ -1,0 +1,52 @@
+<section class="page-shell service-hero text-center">
+  <div class="container py-5">
+    <p class="eyebrow">Our Services</p>
+    <h1 class="fw-bold display-5 mb-3">Complete computer and business IT support</h1>
+    <p class="lead mx-auto">
+      Choose from practical services for hardware, software, CCTV, printers, accounting solutions
+      and system security.
+    </p>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let service of services">
+        <div class="card service-card h-100 border-0 shadow-sm">
+          <img [src]="service.image" class="card-img-top" [alt]="service.title" />
+          <div class="card-body p-4">
+            <h5 class="fw-bold">{{ service.title }}</h5>
+            <p>{{ service.text }}</p>
+            <a routerLink="/contact" class="btn btn-outline-primary btn-sm fw-semibold">Get Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 soft-band">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-5">
+        <p class="eyebrow">How We Work</p>
+        <h2 class="section-title">Simple process, clear support</h2>
+        <p class="mb-0">
+          Whether it is a new installation or repair work, we keep the flow easy to understand so
+          you know what is happening and what it will cost.
+        </p>
+      </div>
+      <div class="col-lg-7">
+        <div class="row g-3">
+          <div class="col-sm-6" *ngFor="let step of process; let i = index">
+            <div class="content-card p-4 h-100">
+              <span class="icon-badge mb-3">{{ i + 1 }}</span>
+              <h6 class="fw-bold mb-0">{{ step }}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

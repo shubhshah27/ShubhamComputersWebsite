@@ -1,0 +1,83 @@
+<section class="page-shell about-hero">
+  <div class="container py-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <p class="eyebrow">About Shubham Computers</p>
+        <h1 class="fw-bold display-5 mb-3">Your local technology partner for everyday business needs.</h1>
+        <p class="lead">
+          Shubham Computers provides computer sales, repairs, CCTV setup, printer service, Tally
+          support, BizAnalyst integration and antivirus solutions for homes, offices and businesses
+          in Ahmedabad.
+        </p>
+        <p>
+          With 20+ years of experience, we focus on practical guidance, genuine products and
+          dependable support for customers who need technology to work smoothly every day.
+        </p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a routerLink="/services" class="btn btn-warning fw-semibold px-4">View Services</a>
+          <a routerLink="/contact" class="btn btn-outline-primary fw-semibold px-4">Contact Us</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <img src="assets/about-us.jpg" alt="Shubham Computers team and service" class="img-fluid rounded shadow" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 soft-band">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-md-4" *ngFor="let item of milestones">
+        <div class="content-card p-4 h-100">
+          <h2 class="section-title mb-1">{{ item.count }}</h2>
+          <p class="fw-semibold mb-0">{{ item.label }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-4">
+        <p class="eyebrow">Why Choose Us</p>
+        <h2 class="section-title">Built for dependable local support</h2>
+        <p>
+          Customers usually need simple answers, quick action and honest product suggestions. Our
+          service approach is built around that.
+        </p>
+      </div>
+      <div class="col-lg-8">
+        <div class="row g-4">
+          <div class="col-md-6" *ngFor="let strength of strengths">
+            <div class="content-card p-4 h-100">
+              <span class="icon-badge about-icon-badge mb-3" aria-hidden="true">
+                <i class="bi" [ngClass]="strength.icon"></i>
+              </span>
+              <h5 class="fw-bold">{{ strength.title }}</h5>
+              <p class="mb-0">{{ strength.text }}</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="content-card p-4 h-100 values-card">
+              <h5 class="fw-bold">Our Values</h5>
+              <ul class="mb-0">
+                <li *ngFor="let value of values">{{ value }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 cta-section text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-3">Need help choosing the right IT solution?</h2>
+    <p class="lead mb-4">Tell us your requirement and we will guide you with a practical option.</p>
+    <a href="tel:+919824817431" class="btn btn-warning fw-semibold px-4">Call 9824817431</a>
+  </div>
+</section>

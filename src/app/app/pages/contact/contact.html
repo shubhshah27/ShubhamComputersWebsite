@@ -1,0 +1,99 @@
+<section class="page-shell contact-hero">
+  <div class="container py-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <p class="eyebrow">Contact Us</p>
+        <h1 class="fw-bold display-5 mb-3">Tell us what support you need</h1>
+        <p class="lead">
+          Call, email or send a quick enquiry for computer service, product purchase, CCTV, Tally,
+          printer or antivirus support.
+        </p>
+        <div class="contact-list mt-4">
+          <div class="content-card p-3 mb-3" *ngFor="let method of contactMethods">
+            <p class="fw-bold mb-1">{{ method.label }}</p>
+            <a *ngIf="method.link; else plainValue" [href]="method.link">{{ method.value }}</a>
+            <ng-template #plainValue>
+              <span>{{ method.value }}</span>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="content-card p-4 p-md-5">
+          <h2 class="section-title mb-4">Send Enquiry</h2>
+          <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" ngModel class="form-control" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Phone</label>
+                <input type="tel" name="phone" ngModel class="form-control" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" ngModel class="form-control" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Service Required</label>
+                <select name="service" ngModel class="form-select" required>
+                  <option value="">Select service</option>
+                  <option *ngFor="let topic of quickTopics" [value]="topic">{{ topic }}</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Message</label>
+                <textarea name="message" ngModel class="form-control" rows="4" required></textarea>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-warning fw-semibold px-4" type="submit" [disabled]="isSubmitting">
+                  {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="alert alert-success mt-3 mb-0" *ngIf="formSubmitted">
+            Thank you. Your enquiry has been sent. We will contact you shortly.
+          </div>
+          <div class="alert alert-danger mt-3 mb-0" *ngIf="formError">
+            {{ formError }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 soft-band">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <h2 class="section-title">Visit or call for faster help</h2>
+        <p class="mb-0">
+          For urgent service, calling is the fastest option. For product enquiries, mention your
+          requirement, budget and preferred timeline.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <div class="map-box">
+          <iframe
+            title="Shubham Computers location map"
+            src="https://www.google.com/maps?q=34%2C%20Shilpa%20Society%2C%20D-Cabin%2C%20Sabarmati%2C%20Ahmedabad&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <a
+          class="map-link"
+          href="https://www.google.com/maps/search/?api=1&query=34%2C%20Shilpa%20Society%2C%20D-Cabin%2C%20Sabarmati%2C%20Ahmedabad"
+          target="_blank"
+          rel="noopener"
+        >
+          Open location in Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

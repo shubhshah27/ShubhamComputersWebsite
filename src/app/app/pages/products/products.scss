@@ -1,0 +1,24 @@
+.product-hero {
+  background: linear-gradient(180deg, #f7fbff 0%, #fff 100%);
+}
+
+.product-hero img {
+  max-height: 420px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.product-card {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-card img {
+  height: 210px;
+  object-fit: cover;
+}
+
+.product-icon-badge {
+  flex: 0 0 44px;
+  font-size: 1.1rem;
+}

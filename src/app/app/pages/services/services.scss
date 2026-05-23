@@ -1,0 +1,17 @@
+.service-hero {
+  background: #f7fbff;
+}
+
+.service-hero .lead {
+  max-width: 760px;
+}
+
+.service-card {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.service-card img {
+  height: 220px;
+  object-fit: cover;
+}
