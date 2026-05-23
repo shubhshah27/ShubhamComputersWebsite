@@ -35,6 +35,7 @@ export class Services implements OnInit {
     },
     {
       image: 'assets/service-biz.png',
+      imageClass: 'service-image-contain',
       title: 'BizAnalyst Integration',
       text: 'Mobile business reports, outstanding tracking and Tally data access for business owners.',
     },

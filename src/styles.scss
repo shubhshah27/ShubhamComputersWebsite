@@ -5,7 +5,12 @@ body {
 }
 
 .page-shell {
-  padding-top: 88px;
+  padding-top: 32px;
+}
+
+.page-shell > .container {
+  padding-bottom: 1.25rem !important;
+  padding-top: 1.25rem !important;
 }
 
 .section-title {

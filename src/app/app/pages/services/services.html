@@ -14,7 +14,7 @@
     <div class="row g-4">
       <div class="col-md-6 col-lg-4" *ngFor="let service of services">
         <div class="card service-card h-100 border-0 shadow-sm">
-          <img [src]="service.image" class="card-img-top" [alt]="service.title" />
+          <img [src]="service.image" [ngClass]="service.imageClass" class="card-img-top" [alt]="service.title" />
           <div class="card-body p-4">
             <h5 class="fw-bold">{{ service.title }}</h5>
             <p>{{ service.text }}</p>

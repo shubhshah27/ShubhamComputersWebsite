@@ -15,3 +15,9 @@
   height: 220px;
   object-fit: cover;
 }
+
+.service-card img.service-image-contain {
+  background: #f6f9fc;
+  object-fit: contain;
+  padding: 1.5rem;
+}
