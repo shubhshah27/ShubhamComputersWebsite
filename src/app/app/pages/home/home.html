@@ -13,7 +13,7 @@
 
   <div class="carousel-inner">
     <div *ngFor="let slide of slides; let i = index" class="carousel-item" [class.active]="i === 0">
-      <img [src]="slide.image" class="d-block w-100" [alt]="slide.title" />
+      <img [src]="slide.image" class="d-block w-100" [ngClass]="slide.imageClass" [alt]="slide.title" />
       <div class="carousel-caption">
         <div class="container">
           <div class="hero-copy">
@@ -71,7 +71,7 @@
     <div class="row g-4">
       <div class="col-md-6 col-xl-4" *ngFor="let s of services">
         <article class="service-card h-100">
-          <img [src]="s.image" [alt]="s.title" />
+          <img [src]="s.image" [ngClass]="s.imageClass" [alt]="s.title" />
           <div class="service-card-body">
             <h3>{{ s.title }}</h3>
             <p>{{ s.text }}</p>

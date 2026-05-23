@@ -12,6 +12,10 @@
   filter: brightness(0.48);
 }
 
+.carousel-item img.hero-image-right {
+  object-position: center right;
+}
+
 .carousel-caption {
   bottom: 0;
   left: 0;
@@ -114,6 +118,12 @@
   display: block;
   object-fit: cover;
   width: 100%;
+}
+
+.service-card img.service-image-contain {
+  background: #f6f9fc;
+  object-fit: contain;
+  padding: 1.5rem;
 }
 
 .service-card-body {

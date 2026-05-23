@@ -42,6 +42,7 @@ export class Home implements OnInit {
     },
     {
       image: 'assets/silde-biz.avif',
+      imageClass: 'hero-image-right',
       title: 'BizAnalyst Support & Integration',
       text: 'Boost your business with mobile analytics and reports synced with Tally.',
       buttonText: 'Discover More',
@@ -85,6 +86,7 @@ export class Home implements OnInit {
     },
     {
       image: 'assets/service-biz.png',
+      imageClass: 'service-image-contain',
       title: 'BizAnalyst Integration',
       text: 'Mobile access to Tally reports, outstanding tracking and business analysis.'
     },
